@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landing page4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFD700',
+                        secondary: '#000000',
+                        accent: '#FF0000',
+                    },
+                    fontFamily: {
+                        sans: ['"Barlow"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .car-image-container {
+            position: relative;
+            min-height: 300px;
+        }
+
+        .car-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .mobile-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-details {
+                display: none;
+            }
+
+            .car-image {
+                max-height: 500px;
+            }
+        }
+
+        .intro h1 {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .intro img {
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+        }
+
+        .intro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%);
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+
+    <div
+        class="intro fixed z-50 h-screen inset-0 bg-gradient-to-br from-primary via-black to-black flex items-center justify-center text-center">
+        <div class="flex items-center gap-x-4">
+            <div class="h-20 w-20 logo-intro z-20 animate-pulse">
+                <img src="assets/Lamborghini-Logo-removebg-preview.png" alt="Logo Lamborghini"
+                    class="w-full h-full object-cover ">
+            </div>
+            <div class="flex items-center ml-2">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide text-intro z-10">Lambor</h1>
+                <h1
+                    class="text-primary drop-shadow-lg text-intro-span text-4xl md:text-6xl font-extrabold tracking-wide">
+                    ghini</h1>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+    <nav class="fixed w-full bg-black bg-opacity-90 z-40 shadow-lg header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary">
+                        <span class="text-white">LAMBOR</span><span class="text-primary">GHINI</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-white hover:text-primary transition">Models</a>
+                    <a href="#" class="text-white hover:text-primary transition">Performance</a>
+                    <a href="#" class="text-white hover:text-primary transition">Gallery</a>
+                    <a href="#" class="text-white hover:text-primary transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto relative">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight title">
+                        <span class="text-primary">UNLEASH</span> THE BEAST
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 subtitle">
+                        Experience the pinnacle of automotive engineering with the new Lamborghini Huracán EVO.
+                        Precision, power, and pure adrenaline.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 btns">
+                        <a href="#"
+                            class="bg-primary text-black px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition text-center">
+                            Explore Models
+                        </a>
+                        <a href="#"
+                            class="border-2 border-white text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black transition text-center">
+                            Book a Test Drive
+                        </a>
+                    </div>
+
+                    <div class="mobile-details md:hidden">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-primary detail11">
+                            <h3 class="font-bold text-primary">TOP SPEED</h3>
+                            <p class="text-white text-xl">500 <span class="text-sm">km/h</span></p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-primary detail22">
+                            <h3 class="font-bold text-primary">0-100 km/h</h3>
+                            <p class="text-white text-xl">1.3 <span class="text-sm">seconds</span></p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-primary detail33">
+                            <h3 class="font-bold text-primary">HORSEPOWER</h3>
+                            <p class="text-white text-xl">850<span class="text-sm">HP</span></p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-primary detail44">
+                            <h3 class="font-bold text-primary">ENGINE</h3>
+                            <p class="text-white text-xl">V12 <span class="text-sm">5.2L</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 relative car-image-container">
+                    <img src="assets/Lamborghini.png" alt="Lamborghini SVG"
+                        class="rounded-lg shadow-xl car-image image">
+
+                    <div
+                        class="absolute -top-6 left-0 hidden md:block bg-white bg-opacity-10 p-4 rounded-lg shadow-lg border-l-4 border-primary w-48 detail1">
+                        <h3 class="font-bold text-primary">TOP SPEED</h3>
+                        <p class="text-white text-xl">500 <span class="text-sm">km/h</span></p>
+                    </div>
+
+                    <div
+                        class="absolute -top-6 right-0 hidden md:block bg-white bg-opacity-10 p-4 rounded-lg shadow-lg border-l-4 border-primary w-48 detail2">
+                        <h3 class="font-bold text-primary">0-100 km/h</h3>
+                        <p class="text-white text-xl">1.3 <span class="text-sm">seconds</span></p>
+                    </div>
+
+                    <div
+                        class="absolute -left-6 bottom-1/4 hidden md:block bg-white bg-opacity-10 p-4 rounded-lg shadow-lg border-l-4 border-primary w-48 detail3">
+                        <h3 class="font-bold text-primary">HORSEPOWER</h3>
+                        <p class="text-white text-xl">850<span class="text-sm">HP</span></p>
+                    </div>
+
+                    <div
+                        class="absolute -right-6 bottom-1/4 hidden md:block bg-white bg-opacity-10 p-4 rounded-lg shadow-lg border-l-4 border-primary w-48 detail4">
+                        <h3 class="font-bold text-primary">ENGINE</h3>
+                        <p class="text-white text-xl">V12 <span class="text-sm">5.2L</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener("load", () => {
+            const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+
+            tl.fromTo(".logo-intro", {
+                opacity: 0,
+                x: -400,
+                scale: 7,
+                rotate: 130
+            }, {
+                duration: 2,
+                x: 0,
+                opacity: 1,
+                scale: 1.3,
+                rotate: 0,
+                delay: 0.3,
+                ease: "elastic.out(1, 0.9)"
+            })
+
+
+                .from(".text-intro", {
+                    duration: 1.2,
+                    opacity: 0,
+                    y: 100,
+                    skewY: 30,
+                    ease: "power3.out",
+                }, "-=0.4")
+                .from(".text-intro-span", {
+                    duration: 1.3,
+                    scale: 2.1,
+                    opacity: 0,
+                    x: 500,
+                    y: -20,
+                    ease: "elastic.out(1, 0.5)",
+                }, "-=0.2")
+
+                // Slide Away Intro
+                .to(".intro", {
+                    duration: 1.2,
+                    delay: 0.8,
+                    y: "-100%",
+                    ease: "power4.inOut",
+                    onComplete: () => {
+                        document.querySelector(".intro").style.display = "none";
+                    }
+                })
+
+
+            tl.from(".header", {
+                y: -100,
+                opacity: 0,
+                duration: 1.2,
+            })
+                .from(".image", {
+                    x: 900,
+                    opacity: 0,
+                    duration: 3.5,
+                    ease: "power4.out",
+                }, "-=0.4")
+                .from(".title", {
+                    x: -100,
+                    opacity: 0,
+                    duration: 1,
+                }, "-=0.5")
+                .from(".subtitle", {
+                    x: -100,
+                    opacity: 0,
+                    duration: 0.9,
+                }, "-=0.4")
+                .from(".btns", {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                }, "-=0.3")
+                .from(".detail1", {
+                    y: -30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.3")
+                .from(".detail11", {
+                    x: -30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.3")
+                .from(".detail2", {
+                    y: -30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.5")
+                .from(".detail22", {
+                    x: 30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.5")
+                .from(".detail3", {
+                    x: -30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.4")
+                .from(".detail33", {
+                    x: -30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.4")
+                .from(".detail4", {
+                    x: 30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.5")
+                .from(".detail44", {
+                    x: 30,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.5")
+        });
+    </script>
+</body>
+
+</html>
